@@ -1,0 +1,180 @@
+import time
+
+def introduction():
+    print("歡迎來到文字冒險之旅！你即將踏上一場神秘的冒險。")
+    time.sleep(1)
+
+def choose_path():
+    print("你面前有三條路...")
+    time.sleep(1)
+    print("1. 走向天空")
+    time.sleep(1)
+    print("2. 走向森林")
+    time.sleep(1)
+    print("3. 方向森林")
+    time.sleep(1)
+    choice = input("請輸入你的選擇 (1/2/3): ")
+    return choice
+
+def encounter_enemy():
+    print("在路上，你遇到了一隻咆哮的巨龍！")
+    time.sleep(1)
+    print("這是一場生死搏鬥！")
+    time.sleep(1)
+    print("你應該：")
+    time.sleep(1)
+    print("1. 試圖逃跑")
+    time.sleep(1)
+    print("2. 拿起書本對抗它")
+    time.sleep(1)
+    print("3. 泡茶自己喝")
+    time.sleep(1)
+    print("4. 拿起劍對抗它")
+    time.sleep(1)
+    print("5. 試圖忘記")
+    time.sleep(1)
+    choice = input("請輸入你的選擇 (1/2/3/4/5): ")
+    return choice
+
+def forget_rote():
+    print("這時，出現了一個謎語。")
+    time.sleep(1)
+    print("如果回答正確，就能找到尋寶路線。")
+    time.sleep(1)
+    print("請問你要喝水了嗎？")
+    time.sleep(1)
+    print("1. 我要水喝，謝謝。")
+    time.sleep(1)
+    print("2. 我要喝水，謝謝。")
+    time.sleep(1)
+    choice = input("請輸入你的選擇 (1/2): ")
+    return choice
+    
+def find_treasure():
+    print("寶藏上面有一道鎖。")
+    time.sleep(1)
+    print("需要回答一個問題才能解鎖。")
+    time.sleep(1)
+    print("請哪一句文法是對的？")
+    time.sleep(1)
+    print("1. 我對他有興趣。")
+    time.sleep(1)
+    print("2. 我興趣對他有。")
+    time.sleep(1)
+    choice = input("請輸入你的選擇 (1/2): ")
+    return choice
+
+def get_treasure():
+    print("恭喜你，你成功得到寶藏！遊戲結束。")
+
+# 主遊戲流程
+introduction()
+
+path_choice = choose_path()
+if path_choice == "2":
+    print("\n你走向了森林...")
+    time.sleep(1)
+    
+    enemy_choice = encounter_enemy()
+    if enemy_choice == "1":
+        print("\n你選擇試圖逃跑，但...")
+        time.sleep(1)
+        print("跑了一段路，你迷失了方向！")
+        time.sleep(1)
+        rote_choice = forget_rote()
+        if rote_choice == "2":
+            print("回答正確！")
+            time.sleep(1)
+            print("找到正確的尋寶路線後，你看到了寶藏。")
+            time.sleep(1)
+            treasure_choice = find_treasure()
+            if treasure_choice == "1":
+                print("回答正確！")
+                time.sleep(1)
+                get_treasure()
+            elif treasure_choice == "2":
+                print("回答錯誤！")
+                time.sleep(1)
+                print("請重新開始遊戲！")
+                time.sleep(1)
+            else:
+                print("無效的選擇，請遵守規則。")
+                
+        elif rote_choice == "1":
+            print("回答錯誤！")
+            time.sleep(1)
+            print("請重新開始遊戲！")
+            time.sleep(1)
+        else:
+            print("無效的選擇，請遵守規則。")
+        
+    elif enemy_choice == "2":
+        print("\n你選擇「拿起書本對抗它」")
+        time.sleep(1)
+        print("選擇錯誤！")
+        time.sleep(1)
+        print("書本不是武器，無法對抗巨龍。")
+        time.sleep(1)
+        print("請重新開始遊戲！")
+        time.sleep(1)
+    elif enemy_choice == "3":
+        print("\n你選擇「泡茶自己喝」")
+        time.sleep(1)
+        print("選擇錯誤！")
+        time.sleep(1)
+        print("與題目沒有任何相關聯。")
+        time.sleep(1)
+        print("請重新開始遊戲！")
+        time.sleep(1)
+    elif enemy_choice == "4":
+        print("\n你選擇拿起劍並與巨龍激戰！")
+        time.sleep(1)
+        print("幸運的是，你成功擊退了巨龍。")
+        time.sleep(1)
+        print("巨龍消失後，你看到了寶藏。")
+        time.sleep(1)
+        treasure_choice = find_treasure()
+        if treasure_choice == "1":
+            print("回答正確！")
+            time.sleep(1)
+            get_treasure()
+        elif treasure_choice == "2":
+            print("回答錯誤！")
+            time.sleep(1)
+            print("請重新開始遊戲！")
+            time.sleep(1)
+        else:
+            print("無效的選擇，請遵守規則。")
+            
+    elif enemy_choice == "5":
+        print("\n你選擇「試圖忘記」")
+        time.sleep(1)
+        print("選擇錯誤！")
+        time.sleep(1)
+        print("這個問題要回答與實際行動有關的答案，忘記屬於想法。")
+        time.sleep(1)
+        print("請重新開始遊戲！")
+        time.sleep(1)
+    else:
+        print("無效的選擇，請遵守規則。")
+       
+elif path_choice == "1":
+    print("\n你選擇「走向天空」")
+    time.sleep(1)
+    print("選擇錯誤！")
+    time.sleep(1)
+    print("在實際的地理環境中，我們無法走向天空，因為天空不是一個實際的地點。")
+    time.sleep(1)
+    print("請重新開始遊戲！")
+    time.sleep(1)
+elif path_choice == "3":
+    print("\n你選擇「方向森林」")
+    time.sleep(1)
+    print("選擇錯誤！")
+    time.sleep(1)
+    print("方向不是動詞，無法放在特定的地理景點前面使用，這不符合語法和辭意。")
+    time.sleep(1)
+    print("請重新開始遊戲！")
+    time.sleep(1)
+else:
+    print("無效的選擇，請遵守規則。")
